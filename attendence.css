@@ -34,3 +34,12 @@ h1{
 }
 
 /* navbar-ended */
+
+.form-control{
+    width: 250px;
+}
+#search{
+    position: relative;
+    left: 500px;
+    top: 50px;
+}
