@@ -255,6 +255,13 @@ p{
     top: -30px;
 }
 
+/* Button */
+.btn-submit button{
+    position: absolute;
+    left: 640px;
+    width: 100px;
+}
+
 h2{
     text-align: center;
     position: relative;
