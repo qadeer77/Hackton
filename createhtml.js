@@ -1,4 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+import { getAuth,
+    signOut,
+} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
 import { 
     collection, 
     addDoc,
@@ -17,6 +20,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+const auth = getAuth();
 
 
 let studentSubmit = document.getElementById("studentSubmit");
@@ -60,4 +64,17 @@ studentSubmit.addEventListener("click", async() => {
         courseName.value = "";
         batchNumber.value = "";
     }
+})
+
+let logout = document.getElementById("logout");
+
+logout.addEventListener("click", (event)=> {
+    event.preventDefault();
+    signOut(auth)
+      .then(() => {
+        window.location.pathname = "/index.html";
+      })
+      .catch((error) => {
+        console.log(error);
+      });
 })

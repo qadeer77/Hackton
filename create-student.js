@@ -1,5 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
-import { getAuth } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
+import { getAuth,
+        signOut,
+} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
 import {
   doc,
   updateDoc,
@@ -95,3 +97,17 @@ studentSubmit.addEventListener("click", async () => {
     console.log("errror=>" + errorCode, errorMessage);
   }
 });
+
+
+let logout = document.getElementById("logout");
+
+logout.addEventListener("click", (event)=> {
+    event.preventDefault();
+    signOut(auth)
+      .then(() => {
+        window.location.pathname = "/index.html";
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+})
