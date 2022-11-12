@@ -1,0 +1,36 @@
+/* navbar Started */
+
+#createclass{
+    color: white;
+}
+
+#app{
+    color: white;
+}
+
+#class{
+    color: white;
+}
+
+#createstudent{
+    color: white;
+}
+
+#student{
+    color: white;
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 200px;
+}
+
+#button{
+   background-color: white;
+   color: white;
+}
+
+/* navbar-ended */
