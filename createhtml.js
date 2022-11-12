@@ -34,6 +34,7 @@ let saturday = document.getElementById("saturday");
 let sunday = document.getElementById("sunday");
 
 studentSubmit.addEventListener("click", async() => {
+    try{
     const docRef = await addDoc(collection(db, "craeteClass"), {
         classtiming: calssTiming.value,
         teachername: teacherName.value,
@@ -48,4 +49,15 @@ studentSubmit.addEventListener("click", async() => {
         sat: saturday.checked,
         sun: sunday.checked, 
       });
+    }
+    catch(error){
+        console.log(error)
+    }
+    finally{
+        calssTiming.value = "";
+        teacherName.value = "";
+        sectionName.value = "";
+        courseName.value = "";
+        batchNumber.value = "";
+    }
 })
